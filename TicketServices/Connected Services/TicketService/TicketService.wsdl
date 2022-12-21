@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserTypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUsersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateBugs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Summary" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBugsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TicketTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsResolved" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTicketsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserTypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUsersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateBugs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Summary" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBugsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TicketTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsResolved" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBugs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Resolved" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBugsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TicketTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsResolved" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUsers" />
+  </wsdl:message>
+  <wsdl:message name="CreateUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBugsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBugs" />
+  </wsdl:message>
+  <wsdl:message name="CreateBugsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTickets" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUsers" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBugsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBugs" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBugsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTickets" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBugsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBugs" />
+  </wsdl:message>
+  <wsdl:message name="GetBugsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBugsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TicketServiceSoap">
+    <wsdl:operation name="CreateUsers">
+      <wsdl:input message="tns:CreateUsersSoapIn" />
+      <wsdl:output message="tns:CreateUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBugs">
+      <wsdl:input message="tns:CreateBugsSoapIn" />
+      <wsdl:output message="tns:CreateBugsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTickets">
+      <wsdl:input message="tns:CreateTicketsSoapIn" />
+      <wsdl:output message="tns:CreateTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <wsdl:input message="tns:UpdateUsersSoapIn" />
+      <wsdl:output message="tns:UpdateUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBugs">
+      <wsdl:input message="tns:UpdateBugsSoapIn" />
+      <wsdl:output message="tns:UpdateBugsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTickets">
+      <wsdl:input message="tns:UpdateTicketsSoapIn" />
+      <wsdl:output message="tns:UpdateTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input message="tns:GetUsersSoapIn" />
+      <wsdl:output message="tns:GetUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBugs">
+      <wsdl:input message="tns:GetBugsSoapIn" />
+      <wsdl:output message="tns:GetBugsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <wsdl:input message="tns:GetTicketsSoapIn" />
+      <wsdl:output message="tns:GetTicketsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TicketServiceSoap" type="tns:TicketServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUsers">
+      <soap:operation soapAction="http://tempuri.org/CreateUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBugs">
+      <soap:operation soapAction="http://tempuri.org/CreateBugs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTickets">
+      <soap:operation soapAction="http://tempuri.org/CreateTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <soap:operation soapAction="http://tempuri.org/UpdateUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBugs">
+      <soap:operation soapAction="http://tempuri.org/UpdateBugs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTickets">
+      <soap:operation soapAction="http://tempuri.org/UpdateTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugs">
+      <soap:operation soapAction="http://tempuri.org/GetBugs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <soap:operation soapAction="http://tempuri.org/GetTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TicketServiceSoap12" type="tns:TicketServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUsers">
+      <soap12:operation soapAction="http://tempuri.org/CreateUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBugs">
+      <soap12:operation soapAction="http://tempuri.org/CreateBugs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTickets">
+      <soap12:operation soapAction="http://tempuri.org/CreateTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBugs">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBugs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTickets">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugs">
+      <soap12:operation soapAction="http://tempuri.org/GetBugs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <soap12:operation soapAction="http://tempuri.org/GetTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TicketService">
+    <wsdl:port name="TicketServiceSoap" binding="tns:TicketServiceSoap">
+      <soap:address location="http://localhost/TicketServices/WebAPI/TicketService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TicketServiceSoap12" binding="tns:TicketServiceSoap12">
+      <soap12:address location="http://localhost/TicketServices/WebAPI/TicketService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
